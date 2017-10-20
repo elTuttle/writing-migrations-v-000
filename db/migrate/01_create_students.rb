@@ -13,7 +13,13 @@ class CreateStudents < ActiveRecord::Migration
     hometown TEXT
     )
   SQL
- 
+
   ActiveRecord::Base.connection.execute(sql)
+
+  def change
+    create_table :artists do |t|
+      t.string :name
+    end
+  end
 
 end
